@@ -36,17 +36,12 @@ public class Customer : MonoBehaviour
         SpriteRenderer sr = headObject.GetComponent<SpriteRenderer>();
         sr.sprite = head.sprite;
 
-        float minX = head.headScaleMin.x;
-        float maxX = head.headScaleMax.x;
+        float min = head.headScaleMin;
+        float max = head.headScaleMax;
 
-        float minY = head.headScaleMin.y;
-        float maxY = head.headScaleMax.y;
+        float scale = Random.Range(min, max);
 
-        float x = Random.Range(minX, maxX);
-        float y = Random.Range(minY, maxY);
-
-
-        Vector2 newScale = new Vector2(x, y);
+        Vector2 newScale = new Vector2(scale, scale);
         headObject.transform.localScale = newScale;
     }
 
