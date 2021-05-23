@@ -45,8 +45,7 @@ public class DialogueManager : MonoBehaviour
         if (addingLetters)
         {
             dialogueText.SetText(currentSentence);
-            StopCoroutine(nameof(AddLetterToText));
-            addingLetters = false;
+            StopAddingLetters();
         }
         else
         {
@@ -56,12 +55,6 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(nameof(AddLetterToText), sentence);
         }
 
-    }
-
-    public void EndDialogue()
-    {
-        screenDialogueOverlay.SetActive(false);
-        dialogueBox.SetActive(false);
     }
 
     IEnumerator AddLetterToText(string sentence)
@@ -75,4 +68,17 @@ public class DialogueManager : MonoBehaviour
         }
         addingLetters = false;
     }
+
+    private void StopAddingLetters()
+    {
+        StopCoroutine(nameof(AddLetterToText));
+        addingLetters = false;
+    }
+
+    public void EndDialogue()
+    {
+        screenDialogueOverlay.SetActive(false);
+        dialogueBox.SetActive(false);
+    }
+
 }
