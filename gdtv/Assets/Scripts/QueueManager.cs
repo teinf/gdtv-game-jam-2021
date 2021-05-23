@@ -7,7 +7,6 @@ public class QueueManager : MonoBehaviour
     public static QueueManager Instance { get; private set; }
 
     public ItemDisplay itemDisplay;
-    public
     void Awake()
     {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
