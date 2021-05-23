@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Customer
+    uniqueID: 2070794313
+    locked: 0
+  - name: Desk
+    uniqueID: 2872617109
+    locked: 0
