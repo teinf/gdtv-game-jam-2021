@@ -13,8 +13,9 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
-        SetCustomerHead(CustomerManager.Instance.GetRandomHead());
-        SetCustomerBody(CustomerManager.Instance.GetRandomBody());
+        var head = CustomerManager.Instance.GetRandomHead();
+        var body = CustomerManager.Instance.GetRandomBody();
+        SetCustomer(head, body);
     }
 
     public Customer(string name, Item item)
@@ -23,7 +24,14 @@ public class Customer : MonoBehaviour
         this.item = item;
     }
 
-    public void SetCustomerHead(Head head)
+    public void SetCustomer(Head head, Body body)
+    {
+        SetCustomerHead(head);
+        SetCustomerBody(body);
+        SetHeadOffset(body);
+    }
+
+    void SetCustomerHead(Head head)
     {
         SpriteRenderer sr = headObject.GetComponent<SpriteRenderer>();
         sr.sprite = head.sprite;
@@ -42,9 +50,15 @@ public class Customer : MonoBehaviour
         headObject.transform.localScale = newScale;
     }
 
-    public void SetCustomerBody(Body body)
+    void SetCustomerBody(Body body)
     {
         SpriteRenderer sr = bodyObject.GetComponent<SpriteRenderer>();
         sr.sprite = body.sprite;
+    }
+
+    void SetHeadOffset(Body body)
+    {
+        Vector3 newOffset = body.headOffset;
+        headObject.transform.position += newOffset;
     }
 }

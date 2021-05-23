@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d124251aec25e047a2fb877a6f26364, type: 3}
-  m_Name: Blue T-Shirt
+  m_Name: Red Tall T-Shirt
   m_EditorClassIdentifier: 
-  name: Blue T-Shirt
-  headOffset: {x: 0, y: 0.5}
-  sprite: {fileID: 21300000, guid: 3c4481ae5b634aa4095536d34e0d1626, type: 3}
+  name: Red Tall T-Shirt
+  headOffset: {x: 0, y: 0.7}
+  sprite: {fileID: 21300000, guid: ee202fd8f7aec154192de660347994e9, type: 3}
