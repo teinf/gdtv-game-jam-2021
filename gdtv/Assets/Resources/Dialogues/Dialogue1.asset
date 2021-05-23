@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfeede702cea461b8674109f545927b, type: 3}
   m_Name: Dialogue1
   m_EditorClassIdentifier: 
-  sentences: []
+  sentences:
+  - Hello there i am very tall person, weather there is good ;)
+  - My name is general kenobi, would you like to lick my elbow?
+  - My name is uveveueue onetyeueueu ubemubum osas
