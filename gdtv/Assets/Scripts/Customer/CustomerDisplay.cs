@@ -42,7 +42,6 @@ public class CustomerDisplay : MonoBehaviour
 
     void SetHeadOffset(Body body)
     {
-        Vector3 newOffset = body.headOffset;
-        headObject.transform.position += newOffset;
+        headObject.transform.position = (Vector2)bodyObject.transform.position + body.headOffset;
     }
 }
