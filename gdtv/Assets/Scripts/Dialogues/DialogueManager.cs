@@ -7,6 +7,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
+    [HideInInspector] public Dialogue[] dialogues;
+
     public GameObject screenDialogueOverlay;
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
@@ -17,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
+        dialogues = Resources.LoadAll<Dialogue>("Dialogues");
         sentences = new Queue<string>();
     }
     public void StartDialogue(Dialogue dialogue, string name)
@@ -79,6 +82,16 @@ public class DialogueManager : MonoBehaviour
     {
         screenDialogueOverlay.SetActive(false);
         dialogueBox.SetActive(false);
+    }
+
+    public Dialogue GetRandomDialogue()
+    {
+        if (dialogues.Length > 0)
+        {
+            return dialogues[Random.Range(0, dialogues.Length)];
+        }
+
+        return null;
     }
 
 }

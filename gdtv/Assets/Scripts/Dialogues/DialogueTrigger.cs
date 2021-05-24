@@ -7,6 +7,6 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     public void TriggerDialogue()
     {
-        DialogueManager.Instance.StartDialogue(dialogue, name);
+        DialogueManager.Instance.StartDialogue(dialogue, "Jeff Bezos");
     }
 }
