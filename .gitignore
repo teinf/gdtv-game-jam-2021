@@ -63,3 +63,7 @@ crashlytics-build.properties
 .DS_Store
 
 gdtv/.vsconfig
+gdtv/ProjectSettings/EditorBuildSettings.asset
+gdtv/ProjectSettings/EditorBuildSettings.asset
+gdtv/UserSettings/EditorUserSettings.asset
+gdtv/ProjectSettings/EditorBuildSettings.asset
