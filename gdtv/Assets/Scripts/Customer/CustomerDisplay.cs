@@ -2,33 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Customer : MonoBehaviour
+public class CustomerDisplay : MonoBehaviour
 {
-    public new string name;
-    public Item item;
-
     [SerializeField] GameObject headObject;
     [SerializeField] GameObject bodyObject;
-
-    private void Start()
+    Customer customer;
+    void Start()
     {
-        var head = CustomerManager.Instance.GetRandomHead();
-        var body = CustomerManager.Instance.GetRandomBody();
-        SetCustomer(head, body);
+        customer = CustomerManager.Instance.GetRandomCustomer();
+        SetCustomer(customer);
     }
 
-    public Customer(string name, Item item)
+    public void SetCustomer(Customer customer)
     {
-        this.name = name;
-        this.item = item;
-    }
-
-    public void SetCustomer(Head head, Body body)
-    {
-        SetCustomerHead(head);
-        SetCustomerBody(body);
-        SetHeadOffset(body);
+        SetCustomerHead(customer.head);
+        SetCustomerBody(customer.body);
+        SetHeadOffset(customer.body);
     }
 
     void SetCustomerHead(Head head)

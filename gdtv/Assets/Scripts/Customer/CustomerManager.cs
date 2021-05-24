@@ -8,7 +8,7 @@ public class CustomerManager : MonoBehaviour
 
     [HideInInspector] public Head[] heads;
     [HideInInspector] public Body[] bodies;
-    
+
     void Awake()
     {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
@@ -36,5 +36,13 @@ public class CustomerManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public Customer GetRandomCustomer()
+    {
+        Head head = CustomerManager.Instance.GetRandomHead();
+        Body body = CustomerManager.Instance.GetRandomBody();
+        Customer customer = new Customer("Jeff Bezos", ItemManager.Instance.GetRandomItem(), head, body);
+        return customer;
     }
 }

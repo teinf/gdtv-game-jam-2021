@@ -7,6 +7,7 @@ public class QueueManager : MonoBehaviour
     public static QueueManager Instance { get; private set; }
 
     public ItemDisplay itemDisplay;
+    public CustomerDisplay customerDisplay;
 
     void Awake()
     {
@@ -15,7 +16,9 @@ public class QueueManager : MonoBehaviour
 
     public void NextCustomer()
     {
-        itemDisplay.SetItem(ItemManager.Instance.GetRandomItem());
-        // Przyda³by siê Event (lub Cuœ), gdy jest "NextCustomer", to aktywuj¹ siê Funkcjê w "CustomerManagerze" i "Customer" w jakiœ sensowny Sposób
+        Customer customer = CustomerManager.Instance.GetRandomCustomer();
+        customerDisplay.SetCustomer(customer);
+        itemDisplay.SetItem(customer.item);
+        DialogueManager.Instance.StartDialogue(DialogueManager.Instance.GetRandomDialogue(), customer.name);
     }
 }
