@@ -51,6 +51,5 @@ public class CustomerDisplay : MonoBehaviour
     public void WalkOutCustomer()
     {
         customerAnimator.SetBool("wasChecked", true);
-        // Stworzyæ Skrypt z CONSTami?
     }
 }
